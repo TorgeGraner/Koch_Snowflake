@@ -1,0 +1,13 @@
+# Koch Snowflake
+Draws the Koch Snowflake of any given recursion depth iteratively, since $\LaTeX$ does not support recursion.
+
+This is achieved by partitioning the curve into four sectors, labeled 0-3, corresponding to the left segment (0), the left leg (1), the right leg (2) and the right segment (3).
+
+To get the coordinates of the $n$-th point $p_n$, calculate the 4-ary expansion of $n$. The $(n-k)$-th digit $d$ of $n$ describes, that $p_n$ lies in the $d$-th sector of recursion depth $k$. Reset the start and end point accordingly until max_depth is reached. 
+
+E.g. $14=32_4$ , implying $p_{14}$ lies in sector 2 of depth 2 of sector 3 of depth 1. As max_depth is reached, $p_{14}$ is the starting point of precisely that segment.
+
+![alt text](https://github.com/TorgeGraner/KochscheSchneeflocke/blob/main/koch.PNG)
+
+## Notes
+For compiler reasons this only works for max_depth less than 6.
